@@ -42,11 +42,14 @@ public class LineComparison{
         Double lineOne = LengthOfLine;
         Double lineTwo = LengthOfLine_2;
 
-        if (lineOne.equals(lineTwo)){
-            System.out.println("Two lines are equal");
-        }
-        else
-            System.out.println("Two lines are not equal");
+    //checking comparison of lines using compareTo();
+    if (lineOne.compareTo(lineTwo)==0){
+        System.out.println("Two lines are equal");
+    }
+	else if(lineOne.compareTo(lineTwo) > 0){
+        System.out.println("First line is greater then Second");
+    }
+	else
+            System.out.println("First line is lesser then Second ");
     }
 }
-
