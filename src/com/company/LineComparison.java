@@ -2,13 +2,14 @@ package com.company;
 
 import java.util.Scanner;
 
-public class LineComparison{
+class LineComparison{
 
-    public static void main(String[] args) {
-        System.out.println("Welcome to Line Comparison Problem Solution");
+    double LengthOfLine=0;
+    double LengthOfLine_2=0;
+    Scanner sc=new Scanner(System.in);
 
-        Scanner sc = new Scanner(System.in);
-
+    public void findLength()
+    {
         System.out.print("Enter the value of starting point of first line at X axis: ");
         double x1 = sc.nextDouble();
 
@@ -37,19 +38,43 @@ public class LineComparison{
         double yy2 = sc.nextDouble();
 
         double LengthOfLine_2 = Math.sqrt(Math.pow((xx2 - xx1),2) + Math.pow((yy2 - yy1 ),2));
-    	System.out.println(LengthOfLine_2);
-
-        Double lineOne = LengthOfLine;
-        Double lineTwo = LengthOfLine_2;
-
-    //checking comparison of lines using compareTo();
-    if (lineOne.compareTo(lineTwo)==0){
-        System.out.println("Two lines are equal");
+        System.out.println(LengthOfLine_2);
     }
-	else if(lineOne.compareTo(lineTwo) > 0){
-        System.out.println("First line is greater then Second");
+
+    Double l1=LengthOfLine;
+    Double l2=LengthOfLine_2;
+    public void equalTo()
+    {
+        if (l1.equals(l2))
+        {
+            System.out.println("two line are equal");
+        }
+        else
+            System.out.println("two lines are not equal");
     }
-	else
-            System.out.println("First line is lesser then Second ");
+
+    public void compareTo()
+    {
+        if (l1.compareTo(l2)==0)
+        {
+            System.out.println("two line are equal");
+        }
+        else if(l1.compareTo(l2) > 0)
+        {
+            System.out.println("1st line is greater then second");
+        }
+        else
+        {
+            System.out.println("1st line is lesser then second ");
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println("welcome to line comparison computational program");
+        LineComparison L1=new LineComparison();
+        L1.findLength();
+        L1.equalTo();
+        L1.compareTo();
     }
 }
